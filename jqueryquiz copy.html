@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<p>Which Programming language is this page build using?</p>
+	<div class="questions">
+  <input type="radio" id="radio_button" name="question" data-check="no" />
+  <label for="q1">Question #1</label> <br>
+  <input type="radio" id="radio_button" name="question" data-check="no" />
+  <label for="q2">Question #2</label><br>
+  <input type="radio" id="radio_button" name="question" data-check="yes" />
+  <label for="q3">Question #3</label><br>
+  <input type="radio" id="radio_button" name="question" data-check="no"  />
+  <label for="q4">Question #4</label><br>
+  <a class="btn-submit" href="">Submit Answer</a>
+</div>
+<div class="error">
+  <p>Please make a selection</p>
+</div>
+<div class="answer">
+  <p>This is correct!</p>
+</div>
+<div class="incorrect">
+  <p>This is incorrect. Sorry, please try again.</p>
+</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js"   integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="   crossorigin="anonymous"></script>
+	<script>
+		jQuery(document).ready(function($) {
+  $(".btn-submit").on("click", function(e) {
+    var radioValue = $("input[name='question']:checked").data("check");
+    if ( ! $("input[name='question']").is(':checked') ) {
+      $(".error").show();
+      $(".answer, .incorrect").hide();
+    } else if (radioValue == "yes") {
+      //console.log("CORRECT!!!");
+      $(".answer").show();
+      $(".incorrect, .error").hide();
+    } else {
+      //console.log("incorrect");
+      $(".answer, .error").hide();
+      $(".incorrect").show();
+    }
+    e.preventDefault();
+  });
+});
+	</script>
+</body>	
+</html>
