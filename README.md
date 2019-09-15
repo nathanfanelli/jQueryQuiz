@@ -1,2 +1,1 @@
-# jQueryQuiz
-Basic radio button jQuery quiz. 
+This is a basic radio button quiz written in jQuery. 
